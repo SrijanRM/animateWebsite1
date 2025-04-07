@@ -16,6 +16,19 @@ body {
     width: 100%;
 }
 
+body {
+    background-color: #f7f7f7;
+}
+
+#cursor {
+    height: 150px;
+    width: 150px;
+    background-color: blanchedalmond;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%) scale(0)
+}
+
 #page1 {
     min-height: 100vh;
     position: relative;
@@ -72,6 +85,10 @@ body {
     height: 100%;
     width: 32%;
     overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #page2 .elem img {
@@ -81,10 +98,40 @@ body {
     scale: 1.1;
 }
 
+#page2 .elem .dets {
+    height: 60px;
+    width: 70%;
+    border-radius: 50px;
+    position: absolute;
+    background-color: antiquewhite;
+}
+
+#page2 .elem .dets:hover {
+    height: 200px;
+}
+
 #page3 {
-    height: 100vh;
+    min-height: 120vh;
     width: 100%;
-    background-color: aqua;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.child {
+    height: 54vh;
+    width: 38vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.child img {
+    height: 100%;
+    object-fit: cover;
 }
 
 @media (max-width:600px) {
@@ -139,11 +186,12 @@ body {
         margin-bottom: 3vw;
     }
 
-    #page2 .elem img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        scale: 1.1;
+    #page2 .elem .dets {
+        height: 40px;
+        width: 70%;
+        border-radius: 50px;
+        position: absolute;
+        background-color: antiquewhite;
     }
 
     #page3 {

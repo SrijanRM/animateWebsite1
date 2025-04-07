@@ -53,5 +53,24 @@ function loadingAnimation() {
     })
 }
 
-
 loadingAnimation()
+
+document.addEventListener("mousemove", (dets) => {
+    gsap.to("#cursor", {
+        left: dets.x,
+        top: dets.y
+    })
+})
+
+document.querySelectorAll('.child').forEach((elm) => {
+    elm.addEventListener("mouseenter", () => {
+        gsap.to("#cursor", {
+            transform: 'translate(-50%, -50%) scale(1)'
+        })
+    })
+    elm.addEventListener("mouseleave", () => {
+        gsap.to("#cursor", {
+            transform: 'translate(-50%, -50%) scale(0)'
+        })
+    })
+})
